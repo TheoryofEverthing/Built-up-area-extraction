@@ -1,0 +1,14 @@
+function [output]=CA_Next(input,thr)
+a=input;
+l1=size(a,1);
+l2=size(a,2);
+for i=1:l1
+    for j=1:l2
+        if a(i,j)>thr
+            a(i,j)=1;
+        else
+            a(i,j)=0;
+        end
+    end
+end
+output=a;
