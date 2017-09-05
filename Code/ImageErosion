@@ -1,0 +1,31 @@
+function[output]=Erosion_im(im)
+
+row=size(im,1);
+column=size(im,2);
+im1=zeros(row,column);
+% n=1;
+% while n<iteration
+    for x=3:row-2
+    for y=3:column-2
+        sum = im(x,y)+im(x,y-1) + im(x,y+1) + ...
+            im(x-1, y) + im(x+1,y) + ...
+            im(x-1,y-1) + im(x-1,y+1) + ...
+            im(x+1,y-1) + im(x+1,y+1)+...
+            im(x-2,y-2)+im(x-2,y-1)+im(x-2,y)+im(x-2,y+1)+im(x-2,y+2)+...
+            im(x-1,y-2)+im(x-1,y+2)+...
+            im(x,y-2)+im(x,y+2)+...
+            im(x+1,y-2)+im(x+1,y+2)+...
+            im(x+2,y-2)+im(x+2,y-1)+im(x+2,y)+im(x+2,y+1)+im(x+2,y+2);
+        if sum==25
+            im1(x,y)=1;
+        end
+    end
+    end 
+   % n=n+1;
+% end
+    
+
+output=im1;
+                
+            
+            
